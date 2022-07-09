@@ -1,5 +1,6 @@
 package kz.kaisar.spring_hibernate_app_01.services;
 
+import kz.kaisar.spring_hibernate_app_01.models.Mood;
 import kz.kaisar.spring_hibernate_app_01.models.Person;
 import kz.kaisar.spring_hibernate_app_01.repositories.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class PeopleService {
 
     @Transactional
     public void save(Person person) {
+        person.setMood(Mood.CALM);
         peopleRepository.save(person);
     }
 

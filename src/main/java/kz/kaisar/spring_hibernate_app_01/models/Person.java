@@ -23,6 +23,9 @@ public class Person {
     @Column(name = "age")
     private int age;
 
+    @Enumerated(EnumType.STRING)
+    private Mood mood;
+
     public Person() {
 
     }
@@ -54,5 +57,22 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Mood getMood() {
+        return mood;
+    }
+
+    public void setMood(Mood mood) {
+        this.mood = mood;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", mood=" + mood +
+                '}';
     }
 }
